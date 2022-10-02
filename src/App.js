@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Map, { GeolocateControl } from "react-map-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
 
 class LambdaDemo extends Component {
   constructor(props) {
@@ -35,14 +37,21 @@ class LambdaDemo extends Component {
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <LambdaDemo />
-        </header>
+      <div>
+        <Map
+          mapboxAccessToken="MAPBOX_TOKEN"
+          initialViewState={{
+            longitude: -100,
+            latitude: 40,
+            zoom: 3.5,
+          }}
+          mapStyle="mapbox://styles/mapbox/streets-v11"
+        >
+          <GeolocateControl
+            positionOptions={{ enableHighAccuracy: true }}
+            trackUserLocation={true}
+          />
+        </Map>
       </div>
     );
   }
