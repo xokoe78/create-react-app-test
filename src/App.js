@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 import Map, { GeolocateControl } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 
@@ -20,5 +21,5 @@ function MyMap() {
       </Map>
     </div>
   );
-}
+}yarn
 export default MyMap;
