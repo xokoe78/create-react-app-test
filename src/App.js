@@ -21,5 +21,5 @@ function MyMap() {
       </Map>
     </div>
   );
-}yarn
+}
 export default MyMap;
